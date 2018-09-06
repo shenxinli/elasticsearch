@@ -84,3 +84,6 @@ Enter host password for user 'elastic':
 <pre>
 changeme
 </pre>
+
+## 修改默认密码
+curl -XPUT -u elastic 'http://localhost:9200/_xpack/security/user/elastic/_password' -d '{"password" : "123456"}'
