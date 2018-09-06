@@ -70,3 +70,17 @@ $ base=https://github.com/docker/machine/releases/download/v0.14.0 &&
   curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine &&
   sudo install /tmp/docker-machine /usr/local/bin/docker-machine
 </pre>
+
+## 验证安装
+<pre>
+curl -u elastic http://127.0.0.1:9200/_cat/health
+</pre>
+
+注意：运行后要求输入密码
+<pre>
+Enter host password for user 'elastic':
+</pre>
+这里初始密码是:
+<pre>
+changeme
+</pre>
