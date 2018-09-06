@@ -86,4 +86,6 @@ changeme
 </pre>
 
 ## 修改默认密码
+<pre>
 curl -XPUT -u elastic 'http://localhost:9200/_xpack/security/user/elastic/_password' -d '{"password" : "123456"}'
+</pre>
