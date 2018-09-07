@@ -7,6 +7,7 @@ docker run -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.e
 </pre>
 
 ## 安装docker-compose
+如果是生产环境，编排好docker，安装集群
 <pre>
 sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 </pre>
@@ -63,6 +64,22 @@ volumes:
 networks:
   esnet:
 </pre>
+
+执行启动命令
+<pre>
+docker-compose up
+</pre>
+注意：如果出现错误
+<pre>
+bound or publishing to a non-loopback address, enforcing bootstrap checks
+ERROR: [1] bootstrap checks failed
+[1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+</pre>
+请在宿主机上运行
+<pre>
+sudo sysctl -w vm.max_map_count=262144
+</pre>
+
 
 ## 安装 docker-machine
 <pre>
