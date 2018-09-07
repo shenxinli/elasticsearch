@@ -114,5 +114,8 @@ curl -XPUT -u elastic 'http://localhost:9200/_xpack/security/user/elastic/_passw
     image: docker.elastic.co/kibana/kibana:5.6.10
     environment:
       SERVER_NAME: kibana
-      ELASTICSEARCH_URL: http://<宿主机内网Ip>:9200
+      ELASTICSEARCH_URL: http://<elastic服务器Ip>:9200
+      ports:
+        - 5601:5601
 </pre>
+上面的posts参数一定要指定，否则访问不了。
