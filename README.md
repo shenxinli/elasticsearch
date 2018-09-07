@@ -106,3 +106,13 @@ changeme
 <pre>
 curl -XPUT -u elastic 'http://localhost:9200/_xpack/security/user/elastic/_password' -d '{"password" : "123456"}'
 </pre>
+
+## 安装kibana
+使用上面docker-compose
+<pre>
+  kibana:
+    image: docker.elastic.co/kibana/kibana:5.6.10
+    environment:
+      SERVER_NAME: kibana
+      ELASTICSEARCH_URL: http://<宿主机内网Ip>:9200
+</pre>
